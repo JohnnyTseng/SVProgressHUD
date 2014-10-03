@@ -80,6 +80,7 @@ static const CGFloat SVProgressHUDParallaxDepthPoints = 10;
     static dispatch_once_t once;
     static SVProgressHUD *sharedView;
     dispatch_once(&once, ^ { sharedView = [[self alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; });
+    if (sharedView) { sharedView.frame = [[UIScreen mainScreen] bounds]; }
     return sharedView;
 }
 
